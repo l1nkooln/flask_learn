@@ -3,6 +3,7 @@ body{
     background: rgb(71, 71, 71);
     background: linear-gradient(to bottom right, blue, pink);
     color: #fff;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .my-card{
