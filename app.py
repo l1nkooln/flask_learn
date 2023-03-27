@@ -30,10 +30,20 @@ class Project(db.Model):
     def __repr__(self):
         return f"Project: {self.title}"
 
-
 @app.route("/") # Вказуємо url-адресу для виклику функції
 def index():
-    return render_template("index.html")#Результат, що повертається у браузер
+    users = User.query.all()
+    print(users)
+    return render_template("index.html", users = users)#Результат, що повертається у браузер
+
+@app.route("/signup", methods = ["POST", "GET"])
+def signup():
+    return render_template("signup.html")
+
+@app.route("/signin", methods = ["POST", "GET"])
+def signin():
+    return render_template("login.html")
+
 
 if __name__ == "__main__":
     app.config['TEMPLATES_AUTO_RELOAD'] = True

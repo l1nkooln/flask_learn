@@ -50,16 +50,21 @@
             </div>
         </nav>
     </header>
-    <main class="container">
-        <h1>Привіт із сервера!</h1>
-        <!-- Головний контент сторінки -->
-        <div class="banner">
-            {% for user in users  %}
-            <div class="my-card">
-                {{user.name}}
+    <main class="container d-flex justify-content-center align-items-center">
+        
+        <form action="" method="POST">
+            <h1 class="mt-5">Увійти в профіль</h1>
+            <div class="mb-3">
+                <label for="name" class="form-label">Введіть ім'я користувача</label>
+                <input name="username" type="text" class="form-control" id="name">
             </div>
-            {% endfor %}
-        </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Введіть ваш пароль</label>
+                <input name="password" type="password" class="form-control" id="password" >
+            </div>
+            <button type="submit" class="btn btn-primary">Увійти</button>
+            <a href="{{url_for('signup')}}" class="text-white">Створити профіль</a>
+        </form>
     </main>
     <footer>
         <!-- Підвал сайту: про сайт, автор, контакти тощо -->
